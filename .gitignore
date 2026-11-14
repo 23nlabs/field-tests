@@ -1,0 +1,8 @@
+*.mp4
+*_cover.png
+.ipynb_checkpoints/
+__pycache__/
+data_cache/
+
+.DS_Store
+
