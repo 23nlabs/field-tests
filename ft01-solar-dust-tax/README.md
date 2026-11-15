@@ -2,6 +2,29 @@
 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/23nlabs/field-tests/blob/main/ft01-solar-dust-tax/ft01_solar_dust_tax.ipynb)
 
+## Results (free Colab T4, 15 Nov 2026)
+
+**Estimate: a 1 GW solar park at Khavda, Kutch loses about ₹55 crore a year to dust if it is only ever cleaned by rain. Washing every 7 days wins back about ₹52 crore of that.**
+
+| Scenario | Washes/yr | Avg soiling loss | Energy lost | ₹ crore lost/yr |
+|---|---|---|---|---|
+| Rain only (never washed) | 0 | 14.0% | 212 GWh | 55.1 |
+| Every 30 days | 13 | 3.4% | 51 GWh | 13.2 |
+| Every 14 days | 27 | 1.6% | 24 GWh | 6.3 |
+| Every 7 days | 53 | 0.8% | 12 GWh | 3.0 |
+
+- **Clean-panel yield:** 1,513 kWh/kWp per year, which is about ₹393 crore a year at ₹2.60/kWh. NASA POWER irradiance for Khavda in 2025 averaged 5.2 kWh/m²/day.
+- **Washing more often:** going from every 30 days to every 7 days pays off if a wash costs less than about ₹2,552 per MW. The most defensible number is this cleaning-interval gap, not the never-washed total.
+- **Sensitivity:** ₹32–60 crore recovered across a dust rate of 0.2–0.5%/day and a tariff of ₹2.34–2.70/kWh.
+- **Vision model:** a ResNet-18 reads % power loss from a panel photo with a 10.8-point MAE on held-out capture days, against 35.2 for always predicting the median. It is most accurate for light soiling (4–6 pts) and least accurate for 30–60% loss (18 pts).
+- **What drives the money figure:** the ₹ estimate comes from the dust-rate model and NASA sunlight, not from the vision model. The vision model shows that loss can be read from a photo.
+
+![Simulated soiling loss](results/soiling_simulation.png)
+![Predicted vs measured loss](results/predicted_vs_measured.png)
+
+📓 [Run notebook with outputs](ft01_solar_dust_tax_executed.ipynb) · 🌐 [HTML version](https://23nlabs.github.io/field-tests/ft01_solar_dust_tax_executed.html)
+
+
 **Question:** How much revenue does dust (soiling) cost a large solar park in Kutch, Gujarat — and how much does
 washing more often win back?
 

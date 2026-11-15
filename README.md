@@ -15,7 +15,7 @@ Each Field Test takes one industry and one open dataset and asks one question. T
 
 | # | Headline | Full results |
 |---|---|---|
-| 01 | *Results to be added from the first Colab run* | [notebook](ft01-solar-dust-tax/) |
+| 01 | Estimate: dust costs a 1 GW solar park in Kutch **~₹55 crore/yr** if it is only cleaned by rain; washing every 7 days wins back **~₹52 crore** | [results](ft01-solar-dust-tax/#results-free-colab-t4-15-nov-2026) · [HTML](https://23nlabs.github.io/field-tests/ft01_solar_dust_tax_executed.html) |
 | 02 | A ResNet-18 on a ₹45,000 CPU box flags **88% of defects** at **₹0.16 per 1,000 parts** (mean AUROC 0.985, against 0.993 for a 6× larger model) | [results](ft02-small-model-defects/#results-free-colab-t4-15-nov-2026) · [HTML](https://23nlabs.github.io/field-tests/ft02_small_model_defects_executed.html) |
 | 03 | From space, **Morbi** grew its night lights **156%** from 2014 to 2021, the fastest in Gujarat (state +57%) | [results](ft03-night-lights-gujarat/#results-free-colab-cpu-15-nov-2026) · [HTML](https://23nlabs.github.io/field-tests/ft03_night_lights_gujarat_executed.html) |
 | 04 | A 3B open model answers **16/25** UPI questions: **English 11/12, Hindi 5/13** | [results](ft04-ask-upi-data/#results-free-colab-t4-15-nov-2026) · [HTML](https://23nlabs.github.io/field-tests/ft04_ask_upi_data_executed.html) |
