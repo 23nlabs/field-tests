@@ -1,0 +1,18 @@
+# Field Test backlog
+
+A daily scheduled build takes the first row marked `todo`, builds that Field Test on its own branch, and marks the row `built`. Sandeep reviews each one and runs it on real data in Colab or Kaggle. Nothing is posted automatically.
+
+Status values: `todo` → `built` (notebook on a branch, tested on synthetic inputs) → `run` (executed on real data, results in `main`) → `posted`.
+
+Every topic is framed around a sector problem. None names a company as a target.
+
+| # | Slug | Status | Sector | Question | Open data (verify before use) | Hook |
+|---|---|---|---|---|---|---|
+| 05 | gujarati-scheme-assistant | todo | Government services | Can a small open model answer citizens' questions about Gujarat government schemes accurately, in Gujarati as well as in English? | Official scheme PDFs and pages from Gujarat and central government portals (e.g. Digital Gujarat, myScheme). Build a 30-question evaluation set with gold answers. | Builds on FT04's Hindi gap: accuracy in Gujarati against English, with retrieval over official documents |
+| 06 | khavda-solar-forecast | todo | Renewables | Can a small time-series model forecast tomorrow's solar output at Khavda better than "same as yesterday", and what does that save in grid-deviation penalties? | NASA POWER and/or Open-Meteo hourly irradiance (no key) | Forecast error in % and ₹ of deviation penalties avoided per 1 GW, with the penalty rule stated as a named assumption |
+| 07 | ships-at-anchor-radar | todo | Ports and logistics | How many ships wait at anchor off Mundra and Kandla each week, counted from radar satellites that see through cloud and monsoon? | Sentinel-1 GRD via Microsoft Planetary Computer STAC (no login), or ASF | A weekly anchorage-congestion index and its monsoon pattern |
+| 08 | industrial-air-from-space | todo | Industry and environment | How has NO₂ over the Vapi, Ankleshwar and Dahej industrial estates changed, measured from space and checked against ground monitors? | Sentinel-5P TROPOMI NO₂ (Planetary Computer or Copernicus), CPCB station data where downloadable | Trend by estate, with satellite readings compared against ground stations |
+| 09 | gujarati-speech-small-model | todo | Telecom, retail, citizen services | How well do small open speech-recognition models understand spoken Gujarati, and where do they fail? | Open Indic speech sets with Gujarati (e.g. IndicVoices, Kathbath, FLEURS). Check each licence. | Word error rate, Gujarati against English or Hindi, on a free GPU |
+| 10 | reservoirs-from-space | todo | Water and government | How full are Sardar Sarovar and Gujarat's major reservoirs each month, measured from water area in satellite images? | Sentinel-2 L2A via Planetary Computer (no login); CWC bulletins for validation if available | Monthly water-area index per reservoir, compared with the published storage levels |
+| 11 | flood-mapping-radar | todo | Disaster response | How fast can open radar data map a city flood? A case study of Vadodara in August 2024. | Sentinel-1 before and after the flood, plus OSM buildings and roads | Flooded area and number of buildings affected, mapped from data available within hours |
+| 12 | ahmedabad-heat-warning | todo | Public health | Can a small model forecast Ahmedabad's dangerous heat days 3 days ahead, as input to a city heat action plan? | ERA5 (Copernicus, needs a free key) or Open-Meteo historical (no key) | Hit rate and false alarms against the heat-alert thresholds, with the thresholds stated as assumptions |
