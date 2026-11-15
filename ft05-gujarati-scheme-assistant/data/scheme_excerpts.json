@@ -1,0 +1,38 @@
+{
+  "_about": "Fallback only. Short excerpts from the 8 official documents listed in the README, transcribed by 23N AI Labs on 2026-11-15 for use when a live download fails. Each entry names its source URL. The notebook prefers the full documents downloaded live from the publisher and prints which source it used for each one. Quoted phrases are as published; connecting text is ours.",
+  "retrieved": "2026-11-15",
+  "docs": {
+    "D1": {
+      "url": "https://static.pib.gov.in/WriteReadData/specificdocs/documents/2025/nov/doc20251120700401.pdf",
+      "text": "PM-KISAN (Pradhan Mantri Kisan Samman Nidhi) was launched on 24 February 2019. It provides \"annual financial assistance of Rs. 6,000/- to each eligible farmer family\", \"delivered in three equal instalments of Rs. 2,000/-\" directly to bank accounts. Eligible: \"All landholding farmers' families, who have cultivable land holdings in their names\". Beneficiaries need land details seeded in the PM-KISAN portal, bank accounts seeded with Aadhaar, and completed eKYC. Income tax payees and employees of central or state governments and PSUs are excluded. The 21st instalment was released on 19 November 2025."
+    },
+    "D2": {
+      "url": "https://static.pib.gov.in/WriteReadData/specificdocs/documents/2026/jan/doc2026121762801.pdf",
+      "text": "Sukanya Samriddhi Yojana (SSY) was launched on 22 January 2015 under Beti Bachao, Beti Padhao. \"The account may be opened anytime from the birth of the girl child until she attains the age of 10 years.\" A \"minimum initial deposit of Rs. 250\" is required; later deposits are in multiples of Rs. 50, with at least Rs. 250 in each financial year. \"The total annual deposit limit is capped at Rs. 1,50,000.\" Deposits can be made for up to 15 years from opening. \"Currently, interest rate under SSY is 8.2%.\" \"The SSY account matures upon the completion of twenty-one years of its opening date.\" Up to 50% of the previous year-end balance can be withdrawn for education once the girl turns 18 or passes Class 10. One account per girl child, and at most two girls per family. Deposits qualify for deduction under Section 80C of the Income Tax Act."
+    },
+    "D3": {
+      "url": "https://static.pib.gov.in/WriteReadData/specificdocs/documents/2025/may/doc202558551501.pdf",
+      "text": "Pradhan Mantri Jeevan Jyoti Bima Yojana (PMJJBY): 10 years. Eligibility: \"Age 18-50 years to enroll; coverage continues up to age 55 for those who join before 50.\" Premium: \"Just Rs. 436 per annum, auto-debited from the subscriber's bank or post office account.\" Benefit: \"Rs. 2 lakh life insurance in case of the subscriber's death (from any cause).\""
+    },
+    "D4": {
+      "url": "https://static.pib.gov.in/WriteReadData/specificdocs/documents/2024/sep/doc2024923400001.pdf",
+      "text": "Transforming Healthcare: Six Years of Ayushman Bharat PM-JAY (23 September 2024). \"Each entitled family receives an annual health cover of Rs. 5 lakhs\" for secondary and tertiary hospital care. \"Around 55 crore beneficiaries from 12 crore poor and vulnerable families are eligible.\" On 11 September 2024 the Union Cabinet approved free health coverage of up to Rs. 5 lakh per family for all senior citizens aged 70 years and above, regardless of income. Senior citizens aged 70 and above in families already covered get an additional top-up cover of Rs. 5 lakh per year for their own use."
+    },
+    "D5": {
+      "url": "https://pfrda.org.in/web/pfrda/schemes/atal-pension-yojana-apy",
+      "text": "Atal Pension Yojana (APY). \"The minimum age of joining APY is 18 years and maximum age is 40 years.\" The Central Government guarantees a minimum monthly pension of Rs. 1,000, Rs. 2,000, Rs. 3,000, Rs. 4,000 or Rs. 5,000 after the age of 60, depending on the contribution. From 1 October 2022, \"any citizen who is or has been an income-tax payer, is not eligible to join APY\". On the death of the subscriber the spouse gets the same pension; on the death of both, the nominee receives the pension wealth accumulated up to age 60 of the subscriber."
+    },
+    "D6": {
+      "url": "https://financialservices.gov.in/sites/default/files/press-release/Press-note-PMSBY-PMJJBY-APY.pdf",
+      "text": "Press note on the launch of the Pradhan Mantri Suraksha Bima Yojana (PMSBY), Pradhan Mantri Jeevan Jyoti Bima Yojana (PMJJBY) and Atal Pension Yojana (APY) in Kolkata on 9 May 2015. PMSBY offers savings bank account holders aged 18 to 70 years \"accidental death cum disability cover of Rupees Two Lakh (Rupees One Lakh for partial permanent disability)\" \"for a premium of Rs. 12/- per annum per subscriber\". PMJJBY offers account holders aged 18 to 50 a \"renewable one year life cover of Rupees Two Lakh\" for death from any cause \"for a premium of Rs. 330/- per annum per subscriber\". APY gives unorganised sector workers a fixed monthly pension of Rs. 1,000 to Rs. 5,000 from age 60; entry age 18 to 40 years; minimum contribution period 20 years."
+    },
+    "D7": {
+      "url": "https://pib.gov.in/PressReleasePage.aspx?PRID=1829772",
+      "text": "Ministry of Finance, May 2022. The premium rates of PMJJBY and PMSBY have been revised w.e.f. 1.6.2022, \"revising PMJJBY from Rs. 330 to Rs. 436 and PMSBY from Rs. 12 to Rs. 20\", i.e. about Rs. 1.25 per day for both schemes together."
+    },
+    "D8": {
+      "url": "https://wcd.gujarat.gov.in/posts?id=328",
+      "text": "Vahli Dikri Yojana, Women and Child Development Department, Government of Gujarat. \"The daughter born on 02/08/2019 (After 11:59 at night on 01/08/2019) will be entitled to the benefit.\" The mother must have been at least 18 years old at the daughter's birth. Daughters among the couple's first three children are eligible. \"The annual income of a couple of rural and urban areas should be Rs. 2,00,000/- or less than that.\" \"At the time of admission of daughter in the 1st standard, the aid of Rs. 4000/- will be provided.\" \"At the time of admission of daughter in the 9th standard, the aid of Rs. 6000/- will be provided.\" \"At the age of 18 years Rs. 1,00,000/- will be provided as higher studies/marriage aid.\""
+    }
+  }
+}
