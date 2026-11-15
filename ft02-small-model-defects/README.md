@@ -2,6 +2,26 @@
 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/23nlabs/field-tests/blob/main/ft02-small-model-defects/ft02_small_model_defects.ipynb)
 
+## Results (free Colab T4, 15 Nov 2026)
+
+**A ResNet-18 on a ₹45,000 CPU box flags 88% of defects at ₹0.16 per 1,000 parts.**
+
+| Product line | ResNet-18 AUROC | WideResNet-50 AUROC | ResNet-18 caught | ResNet-18 false alarms |
+|---|---|---|---|---|
+| Metal nuts | 0.997 | 0.999 | 91/93 | 2/22 |
+| Screws | 0.960 | 0.975 | 91/119 | 1/41 |
+| Glass bottles | 1.000 | 1.000 | 63/63 | 5/20 |
+| Power cables | 0.985 | 0.997 | 77/92 | 1/58 |
+| **Mean** | **0.985** | **0.993** | **88%** | **6%** |
+
+ResNet-18 takes about 202 ms per part on 2 CPU threads; WideResNet-50 takes 650–830 ms per part, roughly 3.5× slower. The larger model catches more screw and cable defects, so the gap is real but small. Costs are estimates; the assumptions are in the notebook.
+
+![AUROC, small vs large backbone](results/auroc_small_vs_large.png)
+![Anomaly heatmaps](results/anomaly_heatmaps.png)
+
+📓 [Run notebook with outputs](ft02_small_model_defects_executed.ipynb) · 🌐 [HTML version](https://23nlabs.github.io/field-tests/ft02_small_model_defects_executed.html)
+
+
 **Question:** can a small model on a cheap CPU catch manufacturing defects as well as a large one, at a fraction of the cost?
 
 We fit a PatchCore-style anomaly detector on photos of good parts only. It is written from scratch with torchvision and a k-NN memory bank, with no training loop and no defect labels. We test it on four product lines that matter to Indian manufacturing: metal nuts, screws, glass bottles and power cables. For each line the notebook:

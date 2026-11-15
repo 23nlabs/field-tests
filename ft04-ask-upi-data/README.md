@@ -2,6 +2,23 @@
 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/23nlabs/field-tests/blob/main/ft04-ask-upi-data/ft04_ask_upi_data.ipynb)
 
+## Results (free Colab T4, 15 Nov 2026)
+
+**A 3B-parameter open model (Qwen2.5-Coder-3B-Instruct) answered 16 of 25 questions about India's UPI data correctly, with a median of 1.6 s per question.**
+
+| Language | Correct (execution accuracy) |
+|---|---|
+| English | 11/12 (92%) |
+| Hindi | 5/13 (38%) |
+| **All** | **16/25 (64%)** |
+
+The model is far weaker in Hindi than in English. Most Hindi misses are unit errors: asked for करोड़ (crore), it answers in lakh crore, or it computes the wrong aggregate, such as a total where the question asked for an average transaction size. That gap is the finding. Small open models need Indian-language tuning before they are trusted with public data.
+
+![Accuracy by language and latency](results/accuracy_latency.png)
+
+📓 [Run notebook with outputs](ft04_ask_upi_data_executed.ipynb) · 🌐 [HTML version](https://23nlabs.github.io/field-tests/ft04_ask_upi_data_executed.html)
+
+
 **Question.** Can a small open model, running for free, answer plain-language questions about India's UPI payments
 data accurately, in both Hindi (Devanagari) and English?
 

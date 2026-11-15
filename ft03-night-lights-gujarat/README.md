@@ -2,6 +2,22 @@
 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/23nlabs/field-tests/blob/main/ft03-night-lights-gujarat/ft03_night_lights_gujarat.ipynb)
 
+## Results (free Colab CPU, 15 Nov 2026)
+
+**From space, Morbi grew its lights 156% from 2014 to 2021, the fastest in Gujarat** among districts with a meaningful 2014 base.
+
+- **Gujarat overall:** +57% total night light (6.6% a year).
+- **Biggest absolute gain:** Ahmedabad (+58%).
+- **Robustness:** averaging two years at each end, Morbi grows +123% and ranks 3rd, so "among the fastest" is the safer wording.
+- **Why 2021:** the source switches processing versions in 2022 (VNL V2.1 to V2.2). The notebook detected this step and ended the comparison at 2021 rather than mixing the two products.
+- **Earlier run:** the first run, before the background-masking fix in commit `3bf8cad`, wrongly showed lights falling and should be ignored.
+
+![District maps 2014 vs 2021 and growth](results/maps_2014_2021.png)
+![Fastest-growing districts](results/top_growth.png)
+
+📓 [Run notebook with outputs](ft03_night_lights_gujarat_executed.ipynb) · 🌐 [HTML version](https://23nlabs.github.io/field-tests/ft03_night_lights_gujarat_executed.html)
+
+
 **Question:** Which Gujarat districts' economic activity grew fastest, measured from space?
 
 The notebook adds up VIIRS satellite night-time light inside each of Gujarat's 33 district boundaries for every year
