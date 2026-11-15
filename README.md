@@ -34,5 +34,8 @@ Each folder holds a clean notebook to run (`ftNN_*.ipynb`) and a copy saved with
 - **Independent.** These are independent studies on public data. They imply no affiliation with any company or government body mentioned.
 - **Honest limits.** Every notebook ends with a section on its limitations.
 
+## Brand
+From Field Test #05 onwards, every notebook, chart, video, cover and post uses the 23N AI Labs brand kit. The kit matches [23nlabs.com](https://23nlabs.com): paper, ink and moss colours, with Bricolage Grotesque, IBM Plex Sans and IBM Plex Mono type. The rules are in [BRAND.md](BRAND.md), and the code is in [`brand/brand23n.py`](brand/brand23n.py).
+
 ## Licence
 Code: MIT. Datasets keep their own licences. Some (e.g. MVTec AD) are non-commercial.
