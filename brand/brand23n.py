@@ -10,7 +10,7 @@ Use it in a notebook (Colab or Kaggle):
         "https://raw.githubusercontent.com/23nlabs/field-tests/main/brand/brand23n.py", "brand23n.py")
     import brand23n as B
     B.setup()                      # fetches the fonts and applies the matplotlib style
-    v = B.Video("ft05_video.mp4")  # a 1080x1080 H.264 writer
+    v = B.Video("ft05_video.mp4")  # a 1080x1080 H.264 writer; the saved file plays at 1.5x (VIDEO_SPEED)
     B.hook_card(v.fig, "05", "Can a small model ...?", "One-line context")
     v.hold(5)
     ...
@@ -40,6 +40,11 @@ COORDS = "23.2° N, 72.6° E"
 SERIES = "23N Field Tests"
 HASHTAGS = "#23NFieldTests"
 STANCE = "Independent study on public data."
+
+# Videos are authored on a 1x timeline (hook 0-5 s ... end card 52-58 s) and saved sped up by this factor, so a
+# 58 s timeline becomes a ~39 s file. Override per video with B.Video(..., speed=1.0), or for a whole run with the
+# environment variable B23N_VIDEO_SPEED=1.
+VIDEO_SPEED = float(os.environ.get("B23N_VIDEO_SPEED", "1.5"))
 
 # ---------------------------------------------------------------- colour tokens (from 23nlabs.com CSS)
 PAPER = "#F4F1EA"   # background
@@ -121,16 +126,31 @@ def source_note(fig, text: str):
 
 # ---------------------------------------------------------------- video
 class Video:
-    """Streams matplotlib frames straight into ffmpeg (H.264, yuv420p, faststart)."""
+    """Streams matplotlib frames straight into ffmpeg (H.264, yuv420p, faststart).
 
-    def __init__(self, out: str, size=(1080, 1080), fps: int = 30):
-        self.out, self.W, self.H, self.fps = out, size[0], size[1], fps
+    Frames are written on a 1x timeline (hold(5) = 5 s of story time). On close() the file is re-timed by `speed`
+    (default VIDEO_SPEED = 1.5) and saved at `out`, still at `fps`. keep_1x=True also keeps the 1x file as *_1x.mp4.
+    """
+
+    def __init__(self, out: str, size=(1080, 1080), fps: int = 30, speed: float | None = None, keep_1x: bool = False):
+        self.final, self.W, self.H, self.fps = out, size[0], size[1], fps
+        self.speed = VIDEO_SPEED if speed is None else float(speed)
+        if self.speed <= 0:
+            raise ValueError("speed must be > 0")
+        self.keep_1x = keep_1x
+        p = Path(out)
+        self.out = out if self.speed == 1 else str(p.with_name(p.stem + "_1x" + p.suffix))
         self.fig = plt.figure(figsize=(self.W / 100, self.H / 100), dpi=100, facecolor=PAPER)
         self.proc = subprocess.Popen(
             ["ffmpeg", "-y", "-loglevel", "error", "-f", "rawvideo", "-pix_fmt", "rgb24", "-s", f"{self.W}x{self.H}",
              "-r", str(fps), "-i", "-", "-c:v", "libx264", "-preset", "veryfast", "-pix_fmt", "yuv420p",
-             "-movflags", "+faststart", out], stdin=subprocess.PIPE)
+             "-movflags", "+faststart", self.out], stdin=subprocess.PIPE)
         self.frames = 0
+
+    @property
+    def duration(self) -> float:
+        """Length of the saved file in seconds (after the speed-up)."""
+        return self.frames / self.fps / self.speed
 
     def clear(self):
         self.fig.clf(); self.fig.set_facecolor(PAPER)
@@ -143,7 +163,7 @@ class Video:
         self.proc.stdin.write(self.grab()); self.frames += 1
 
     def hold(self, seconds: float, fade: float = 0.4):
-        """Write the current figure for `seconds`, fading in from paper over `fade` seconds."""
+        """Write the current figure for `seconds` (1x timeline), fading in from paper over `fade` seconds."""
         n = int(round(seconds * self.fps)); nf = int(round(fade * self.fps))
         img = np.frombuffer(self.grab(), np.uint8).reshape(self.H, self.W, 3).astype(np.float32)
         bg = np.array(matplotlib.colors.to_rgb(PAPER), np.float32) * 255
@@ -156,7 +176,18 @@ class Video:
         self.proc.stdin.close(); rc = self.proc.wait(); plt.close(self.fig)
         if rc != 0:
             raise RuntimeError("ffmpeg failed")
-        return self.out
+        if self.speed != 1:
+            r = subprocess.run(
+                ["ffmpeg", "-y", "-loglevel", "error", "-i", self.out, "-filter:v", f"setpts=PTS/{self.speed}",
+                 "-r", str(self.fps), "-c:v", "libx264", "-preset", "veryfast", "-pix_fmt", "yuv420p",
+                 "-movflags", "+faststart", "-an", self.final])
+            if r.returncode != 0:
+                raise RuntimeError("ffmpeg speed-up failed")
+            if not self.keep_1x:
+                os.remove(self.out)
+        print(f"video: {self.final} · {self.duration:.1f}s at {self.speed:g}x "
+              f"({self.frames / self.fps:.1f}s timeline)" + (f" · 1x copy: {self.out}" if self.speed != 1 and self.keep_1x else ""))
+        return self.final
 
 
 def _wrap(s: str, n: int) -> str:
