@@ -38,7 +38,8 @@ Chart order: Moss, Amber, Ink, Stone. Sequential maps run from Paper deep throug
 - **Hindi and other Indian scripts:** Noto Sans Devanagari or the matching Noto font, rendered with shaping (Pillow + libraqm).
 - The fonts are in `brand/fonts/` (SIL OFL 1.1). The Bricolage files are static instances of the variable font.
 
-## Video (1080×1080, 30 fps, 45–60 s, H.264, captions burned in)
+## Video (1080×1080, 30 fps, H.264, captions burned in, saved at 1.5× speed)
+The timings below are the 1× timeline (45–60 s). `B.Video` saves the file at 1.5× by default, so a 58 s timeline plays in about 39 s. Use `B.Video(..., speed=1.0)` for a normal-speed cut.
 1. **0–5 s hook:** the question in large Bricolage, with the last line in Moss and a mono context line beneath.
 2. **5–40 s evidence:** real data from the run, with the standard header band on every frame (wordmark left, `FIELD TEST #NN` right, hairline).
 3. **40–52 s headline:** the number huge in Moss, one plain sentence beneath, and a mono "How:" line.
