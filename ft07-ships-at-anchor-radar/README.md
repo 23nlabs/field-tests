@@ -1,11 +1,10 @@
 # 23N Field Tests #07 · Ships at anchor, seen by radar
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/23nlabs/field-tests/blob/ft07-ships-at-anchor-radar/ft07-ships-at-anchor-radar/ft07_ships_at_anchor_radar.ipynb)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/23nlabs/field-tests/blob/main/ft07-ships-at-anchor-radar/ft07_ships_at_anchor_radar.ipynb)
 
 > **Status: built, not yet run on real data.** The notebook has run end to end only in smoke-test mode
 > (synthetic radar scenes, no internet), and the GCP-based scene reader was tested offline on a synthetic
-> radar-geometry GeoTIFF. There are no results yet. The badge and raw-file links point at the
-> `ft07-ships-at-anchor-radar` branch until it is merged.
+> radar-geometry GeoTIFF. There are no results yet: run it on Colab and check the sanity checks before posting.
 
 **Question.** How many ships wait at anchor off Mundra and Kandla in the Gulf of Kutch each week, counted from radar
 satellites that see through cloud and the monsoon? And how does the count change in the monsoon months?
