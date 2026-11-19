@@ -1,11 +1,11 @@
 # 23N Field Tests #08 · Industrial air, measured from space
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/23nlabs/field-tests/blob/ft08-industrial-air-from-space/ft08-industrial-air-from-space/ft08_industrial_air_from_space.ipynb)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/23nlabs/field-tests/blob/main/ft08-industrial-air-from-space/ft08_industrial_air_from_space.ipynb)
 
 > **Status: built, not yet run on real data.** The notebook has run end to end only in smoke-test mode
 > (synthetic satellite pixels and a synthetic ground series, no internet). The HDF5 slice reader was tested offline
 > on a synthetic file with the Level-2 NO₂ layout. There are no results yet: run it on Colab and check the sanity
-> checks before posting. The Colab badge and the brand-kit link point at this branch until it is merged.
+> checks before posting.
 
 **Question.** How has nitrogen dioxide (NO₂) over the Vapi, Ankleshwar and Dahej industrial estates changed between
 2019 and 2025, measured from space? And do the satellite readings move with the ground monitors near the estates?
