@@ -77,7 +77,12 @@ or any model author mentioned here. The API is used as any paying developer woul
 3. Expect about 15–20 minutes: installs, FLEURS audio (~2 GB) and models (~5 GB), ~800 open-model transcriptions,
    ~400 API calls (rate-limited to 50/min, about 8 minutes), and the video.
 4. Read the **Results** cell. If it prints `!! SANITY CHECK FAILED`, don't post. Fix the cause first.
-5. Keep `ft12_api_cache.json` if you rerun: cached clips are not sent (or billed) again.
+5. **Outputs go to Google Drive automatically.** Near the start, Colab asks once for Drive access; at the end, the
+   video, cover, charts, CSVs, both post texts, the API cache and `RUN_STATUS.txt` (headline plus every sanity-check
+   result) are copied to `My Drive/23N Field Tests/FT12/<date_time>`. Failed runs get `_CHECKS-FAILED` in the folder
+   name. Set `SAVE_TO_DRIVE = False` in the drive cell to skip.
+6. To rerun without paying again, upload the saved `ft12_api_cache.json` to the Colab session first: cached clips
+   are not sent (or billed) again.
 
 `FT12_SMOKE_TEST=1` (environment variable, off by default) runs the notebook without internet, GPU or key:
 synthetic noise clips with sentences we wrote, stand-in "models" and a stand-in "API" that corrupt the reference at
