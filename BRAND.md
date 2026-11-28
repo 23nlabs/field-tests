@@ -45,6 +45,20 @@ The timings below are the 1× timeline (45–60 s). `B.Video` saves the file at 
 3. **40–52 s headline:** the number huge in Moss, one plain sentence beneath, and a mono "How:" line.
 4. **52–58 s end card:** identical in every video. It reads **23N AI Labs**, then *Applied AI research · 23°N*, then *Field Test #NN · open notebook in comments*, then **23nlabs.com**, then the stance and data credit, then the coordinates.
 
+## Video formats (Field Test #13 on)
+Deep Field Tests use **4:5 portrait (`B.PORTRAIT`, 1080×1350)**, which takes up more of the LinkedIn feed. Square (`B.SQUARE`) is still allowed. The hook, headline and end cards are the same in every format. Only the 5–40 s evidence section changes, so pick the format that fits the topic and don't use the same one in two Field Tests in a row:
+
+| Format | What it shows | Kit |
+|---|---|---|
+| `chart` | Animated charts of the result (the FT01–FT12 style) | `B.header` + matplotlib |
+| `overlay` | The model's output drawn on the real imagery: boxes, keypoints, 95% ellipses, masks. Moss for confident, amber for flagged, stone and dashed for "unsure" | `B.overlay_frame`, `B.cov_ellipse` |
+| `mechanism` | The method as a step-by-step diagram, with one step lit per frame | `B.step_card` |
+| `failure` | Side by side: where the model holds and where it breaks (clear vs fog, day vs night) | `B.split_frame` |
+
+A deep Field Test video usually runs mechanism (5–15 s), then overlay (15–30 s), then failure (30–40 s). Calibration charts use `B.reliability_chart`, `B.coverage_chart` and `B.selective_chart`, so every Field Test shows them the same way.
+
+**People and vehicles on screen:** pixelate every face and number plate with `B.blur_regions` before a frame is shown, saved or posted. Show counts and rates, never an identifiable person or vehicle.
+
 ## Cover (1080×1350)
 The wordmark and Field Test number go on top, then the title (Bricolage) and a mono subtitle. Below them sit one visual from the run, then the headline number in Moss and a caption. The footer reads 23nlabs.com, the stance and the data credit.
 
